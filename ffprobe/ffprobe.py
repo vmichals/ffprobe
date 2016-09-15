@@ -236,9 +236,7 @@ class FFStreamSideData(object):
 
     def __init__(self, datalines):
         reading_displaymatrix = False
-        print datalines
         datalines = filter(lambda s: s != '\n', datalines)
-        print datalines
         for a in datalines:
             if reading_displaymatrix and re.match('[0-9]+: ', a):
                     self.displaymatrix.append(map(int, a.split(':')[1].split()))
